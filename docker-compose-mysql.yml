@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Solo MySQL - nessun servizio app containerizzato
+  mysql:
+    image: mysql:8.4
+    container_name: laravel-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: laravel-ms2_db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    command: --default-authentication-plugin=mysql_native_password
+
+# Volume per persistere i dati MySQL
+volumes:
+  mysql-data:
+    driver: local
+
