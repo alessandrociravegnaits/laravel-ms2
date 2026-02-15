@@ -46,16 +46,12 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-di
 # Install npm dependencies and build assets
 RUN npm install && npm run build
 
-# Optimize Laravel
-RUN php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
-
 # Expose port
 EXPOSE 8000
 
-# Start command
-CMD php artisan migrate --force && \
+# Start command - clear any cached config and start fresh
+CMD php artisan config:clear && \
+    php artisan migrate --force && \
     php artisan storage:link --force && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
 
