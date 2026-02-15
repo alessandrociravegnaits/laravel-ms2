@@ -43,15 +43,15 @@ COPY . /app
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
-# Install npm dependencies and build assets
-RUN npm install && npm run build
+# Install npm dependencies (but don't build yet - will build at runtime with correct env vars)
+RUN npm install
 
 # Expose port
 EXPOSE 8000
 
-# Start command - clear any cached config and start fresh
+# Start command - clear cache, build assets with correct APP_URL, then start
 CMD php artisan config:clear && \
+    npm run build && \
     php artisan migrate --force && \
     php artisan storage:link --force && \
     php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
-
