@@ -1,0 +1,63 @@
+[
+  {
+    "feature_name": "CRUD prodotti (API REST)",
+    "description": "Gestione completa dei prodotti tramite API RESTful (creazione, lettura, aggiornamento, eliminazione).",
+    "status": "done",
+    "files": [
+      "app/Http/Controllers/Api/ProductApiController.php",
+      "app/Repositories/ProductRepository.php",
+      "app/Repositories/ProductRepositoryInterface.php",
+      "app/Models/Product.php",
+      "routes/api.php"
+    ]
+  },
+  {
+    "feature_name": "CRUD categorie (API REST)",
+    "description": "Gestione completa delle categorie tramite API RESTful (creazione, lettura, aggiornamento, eliminazione).",
+    "status": "done",
+    "files": [
+      "app/Http/Controllers/Api/CategoryApiController.php",
+      "app/Repositories/CategoryRepository.php",
+      "app/Repositories/CategoryRepositoryInterface.php",
+      "app/Models/Category.php",
+      "routes/api.php"
+    ]
+  },
+  {
+    "feature_name": "CRUD prodotti (Filament Admin)",
+    "description": "Gestione prodotti tramite pannello amministrativo Filament (creazione, modifica, lista, eliminazione).",
+    "status": "done",
+    "files": [
+      "app/Filament/Resources/Products/ProductResource.php",
+      "app/Filament/Resources/Products/Pages/CreateProduct.php",
+      "app/Filament/Resources/Products/Pages/EditProduct.php",
+      "app/Filament/Resources/Products/Pages/ListProducts.php",
+      "app/Filament/Resources/Products/Schemas/ProductForm.php",
+      "app/Filament/Resources/Products/Tables/ProductsTable.php"
+    ]
+  },
+  {
+    "feature_name": "CRUD categorie (Filament Admin)",
+    "description": "Gestione categorie tramite pannello amministrativo Filament (creazione, modifica, lista, eliminazione).",
+    "status": "done",
+    "files": [
+      "app/Filament/Resources/Categories/CategoryResource.php",
+      "app/Filament/Resources/Categories/Pages/CreateCategory.php",
+      "app/Filament/Resources/Categories/Pages/EditCategory.php",
+      "app/Filament/Resources/Categories/Pages/ListCategories.php",
+      "app/Filament/Resources/Categories/Schemas/CategoryForm.php",
+      "app/Filament/Resources/Categories/Tables/CategoriesTable.php"
+    ]
+  },
+  {
+    "feature_name": "Repository Pattern prodotti/categorie",
+    "description": "Implementazione del Repository Pattern per la gestione di prodotti e categorie.",
+    "status": "done",
+    "files": [
+      "app/Repositories/ProductRepository.php",
+      "app/Repositories/ProductRepositoryInterface.php",
+      "app/Repositories/CategoryRepository.php",
+      "app/Repositories/CategoryRepositoryInterface.php"
+    ]
+  }
+]

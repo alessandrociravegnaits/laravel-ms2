@@ -1,0 +1,34 @@
+{
+  "name": "laravel-ms2",
+  "description": "Applicazione eCommerce con Laravel 12 e Filament 5 per gestione prodotti e categorie.",
+  "stack": {
+    "language": "PHP",
+    "framework": "Laravel 12.x",
+    "admin_panel": "Filament 5.x",
+    "database": "MySQL 8.x",
+    "frontend": "Vite, Tailwind CSS",
+    "dev_tools": [
+      "phpunit",
+      "fakerphp/faker",
+      "laravel/pint",
+      "vite",
+      "tailwindcss"
+    ],
+    "docker": true,
+    "railway": true
+  },
+  "architecture": {
+    "pattern": "MVC + Repository Pattern",
+    "uses_psr4": true,
+    "uses_livewire": true,
+    "modular_admin": true
+  },
+  "main_modules": [
+    "app/Filament/Resources/",
+    "app/Models/",
+    "app/Repositories/",
+    "database/migrations/",
+    "resources/views/",
+    "public/"
+  ]
+}

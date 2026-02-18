@@ -1,0 +1,57 @@
+{
+  "naming": {
+    "class": "PascalCase",
+    "interface": "PascalCase",
+    "trait": "PascalCase",
+    "method": "camelCase",
+    "variable": "camelCase",
+    "file": "snake_case.php",
+    "namespace": "PSR-4"
+  },
+  "structure": {
+    "indent_style": "space",
+    "indent_size": 4,
+    "eol": "lf",
+    "charset": "utf-8",
+    "insert_final_newline": true,
+    "trim_trailing_whitespace": true,
+    "yml_indent_size": 2,
+    "directory_structure": [
+      "app/Models/",
+      "app/Repositories/",
+      "app/Filament/Resources/",
+      "database/migrations/",
+      "resources/views/"
+    ]
+  },
+  "error_handling": {
+    "exceptions": "Usare eccezioni personalizzate per errori di dominio. Gestire errori con try/catch nei controller e restituire risposte HTTP appropriate.",
+    "validation": "Validare sempre i dati in ingresso tramite Form Request o validazione nei controller."
+  },
+  "patterns": [
+    "MVC",
+    "Repository Pattern",
+    "Dependency Injection",
+    "Service Provider",
+    "PSR-1",
+    "PSR-12"
+  ],
+  "avoid": [
+    "Logica di business nei controller",
+    "Hardcoding di stringhe/configurazioni",
+    "Duplicazione di codice"
+  ],
+  "testing": {
+    "framework": "phpunit",
+    "directory": "tests/",
+    "types": [
+      "unit",
+      "feature"
+    ],
+    "best_practices": [
+      "Isolare le unità di codice nei test unitari",
+      "Usare database in-memory o transazioni per i test",
+      "Scrivere test per casi limite e validazione"
+    ]
+  }
+}

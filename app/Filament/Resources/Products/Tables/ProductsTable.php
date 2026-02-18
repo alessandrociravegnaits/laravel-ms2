@@ -18,6 +18,7 @@ class ProductsTable
             ->columns([
                 ImageColumn::make('image') ->label('Foto') ->circular(),
                 TextColumn::make('name')
+                    ->sortable()
                     ->searchable()
                     ->label('Nome prodotto'),
                 TextColumn::make('price')
@@ -41,10 +42,10 @@ class ProductsTable
             ->filters([
                 //
             ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ])
+->recordActions([
+    EditAction::make()->label(''),
+    DeleteAction::make()->label(''),
+])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

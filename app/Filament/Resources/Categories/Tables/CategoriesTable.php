@@ -30,10 +30,10 @@ class CategoriesTable
             ->filters([
                 //
             ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ])
+->recordActions([
+    EditAction::make()->label(''),
+    DeleteAction::make()->label(''),
+])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),

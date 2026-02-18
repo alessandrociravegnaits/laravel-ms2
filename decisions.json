@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Pattern architetturale",
+    "decision": "Utilizzo di MVC con Repository Pattern per separazione tra logica di business e accesso ai dati.",
+    "reason": "Favorisce la manutenibilità e la testabilità del codice.",
+    "source": "project_overview.json"
+  },
+  {
+    "title": "PSR-4 e modularità",
+    "decision": "Adozione di namespace PSR-4 e struttura modulare per le risorse admin.",
+    "reason": "Permette autoloading standard e organizzazione scalabile.",
+    "source": "project_overview.json"
+  },
+  {
+    "title": "Stack tecnologico",
+    "decision": "PHP 8.x, Laravel 12.x, Filament 5.x, MySQL 8.x, Vite, Tailwind CSS.",
+    "reason": "Stack moderno e supportato dalla community.",
+    "source": "project_overview.json"
+  },
+  {
+    "title": "Gestione errori",
+    "decision": "Usare eccezioni personalizzate per errori di dominio e try/catch nei controller API.",
+    "reason": "Gestione robusta degli errori e risposte HTTP appropriate.",
+    "source": "coding_conventions.json"
+  },
+  {
+    "title": "Validazione dati",
+    "decision": "Validare sempre i dati in ingresso tramite Form Request o validazione nei controller.",
+    "reason": "Garantire integrità e sicurezza dei dati.",
+    "source": "coding_conventions.json"
+  },
+  {
+    "title": "Naming e stile",
+    "decision": "Classi, interfacce e trait in PascalCase, metodi e variabili in camelCase, file in snake_case.php.",
+    "reason": "Uniformità e leggibilità del codice.",
+    "source": "coding_conventions.json"
+  },
+  {
+    "title": "Testing",
+    "decision": "Uso di PHPUnit per test unitari e funzionali, con database in-memory o transazioni.",
+    "reason": "Affidabilità e copertura dei casi limite.",
+    "source": "coding_conventions.json"
+  },
+  {
+    "title": "Best practice",
+    "decision": "Evitare logica di business nei controller, hardcoding e duplicazione di codice.",
+    "reason": "Favorisce la qualità e la manutenibilità.",
+    "source": "coding_conventions.json"
+  }
+]

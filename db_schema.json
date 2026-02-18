@@ -1,0 +1,118 @@
+{
+  "tables": {
+    "products": {
+      "columns": {
+        "id": "BIGINT UNSIGNED PK AUTO",
+        "name": "VARCHAR(255) UNIQUE",
+        "image": "VARCHAR(255) NULL",
+        "description": "TEXT NULL",
+        "price": "DECIMAL(8,2)",
+        "created_at": "TIMESTAMP",
+        "updated_at": "TIMESTAMP"
+      },
+      "relations": [
+        "many_to_many: categories (via category_product)"
+      ]
+    },
+    "categories": {
+      "columns": {
+        "id": "BIGINT UNSIGNED PK AUTO",
+        "name": "VARCHAR(255) UNIQUE",
+        "description": "TEXT NULL",
+        "created_at": "TIMESTAMP",
+        "updated_at": "TIMESTAMP"
+      },
+      "relations": [
+        "many_to_many: products (via category_product)"
+      ]
+    },
+    "category_product": {
+      "columns": {
+        "product_id": "BIGINT UNSIGNED FK -> products.id",
+        "category_id": "BIGINT UNSIGNED FK -> categories.id",
+        "created_at": "TIMESTAMP",
+        "updated_at": "TIMESTAMP"
+      },
+      "primary": ["product_id", "category_id"]
+    },
+    "users": {
+      "columns": {
+        "id": "BIGINT UNSIGNED PK AUTO",
+        "name": "VARCHAR(255)",
+        "email": "VARCHAR(255) UNIQUE",
+        "email_verified_at": "TIMESTAMP NULL",
+        "password": "VARCHAR(255)",
+        "remember_token": "VARCHAR(100) NULL",
+        "created_at": "TIMESTAMP",
+        "updated_at": "TIMESTAMP"
+      }
+    },
+    "password_reset_tokens": {
+      "columns": {
+        "email": "VARCHAR(255) PK",
+        "token": "VARCHAR(255)",
+        "created_at": "TIMESTAMP NULL"
+      }
+    },
+    "sessions": {
+      "columns": {
+        "id": "VARCHAR(255) PK",
+        "user_id": "BIGINT UNSIGNED FK -> users.id NULL",
+        "ip_address": "VARCHAR(45) NULL",
+        "user_agent": "TEXT NULL",
+        "payload": "LONGTEXT",
+        "last_activity": "INT"
+      }
+    },
+    "cache": {
+      "columns": {
+        "key": "VARCHAR(255) PK",
+        "value": "MEDIUMTEXT",
+        "expiration": "INT"
+      }
+    },
+    "cache_locks": {
+      "columns": {
+        "key": "VARCHAR(255) PK",
+        "owner": "VARCHAR(255)",
+        "expiration": "INT"
+      }
+    },
+    "jobs": {
+      "columns": {
+        "id": "BIGINT UNSIGNED PK AUTO",
+        "queue": "VARCHAR(255)",
+        "payload": "LONGTEXT",
+        "attempts": "TINYINT UNSIGNED",
+        "reserved_at": "INT UNSIGNED NULL",
+        "available_at": "INT UNSIGNED",
+        "created_at": "INT UNSIGNED"
+      }
+    },
+    "job_batches": {
+      "columns": {
+        "id": "VARCHAR(255) PK",
+        "name": "VARCHAR(255)",
+        "total_jobs": "INT",
+        "pending_jobs": "INT",
+        "failed_jobs": "INT",
+        "failed_job_ids": "LONGTEXT",
+        "options": "MEDIUMTEXT NULL",
+        "cancelled_at": "INT NULL",
+        "created_at": "INT",
+        "finished_at": "INT NULL"
+      }
+    },
+    "failed_jobs": {
+      "columns": {
+        "id": "BIGINT UNSIGNED PK AUTO",
+        "uuid": "VARCHAR(255) UNIQUE",
+        "connection": "TEXT",
+        "queue": "TEXT",
+        "payload": "LONGTEXT",
+        "exception": "LONGTEXT",
+        "failed_at": "TIMESTAMP"
+      }
+    }
+  }
+}
